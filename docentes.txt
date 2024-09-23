@@ -1,0 +1,20 @@
+1#Carlos#Fernandez Gomez#40#Matematicas#3000.50
+2#Ana#Perez Garcia#35#Historia#2800.75
+3#Luis#Gonzalez Martinez#45#Ciencias#3200.20
+4#Marta#Lopez Fernandez#38#Lengua#2900.10
+5#Jose#Martinez Ramirez#42#Educacion Fisica#3050.40
+6#Claudia#Santos Ruiz#37#Arte#2700.60
+7#Rafael#Rojas Diaz#39#Fisica#3100.80
+8#Elena#Diaz Lopez#41#Quimica#3250.90
+9#Manuel#Gutierrez Torres#36#Musica#2950.75
+10#Isabel#Hernandez Ruiz#34#Ingles#2850.45
+11#Ricardo#Alvarez Soto#43#Geografia#3000.30
+12#Lucia#Mendez Paredes#39#Filosofia#2750.55
+13#Fernando#Ortega Vega#47#Matematicas#3400.85
+14#Laura#Salinas Montes#40#Historia#3100.95
+15#Pedro#Ramirez Molina#38#Ciencias#3300.10
+16#Raquel#Garcia Nunez#37#Arte#2800.65
+17#Daniel#Mendoza Alvarado#41#Educacion Fisica#3000.20
+18#Sofia#Velasquez Jimenez#36#Lengua#2900.70
+19#Jorge#Rodriguez Morales#44#Ingles#3100.50
+20#Veronica#Morales Soto#39#Fisica#3200.10
