@@ -1,0 +1,3 @@
+estudiantes#id#int#nombres#str#apellidos#str#edad#int#estatura#float
+docentes#id#int#nombres#str#apellidos#str#edad#int#curso#str#sueldo_mensual#float
+trabajadores#nombres#str#apellidos#str#edad#int#posicicon#str#sueldo_mensual#float
