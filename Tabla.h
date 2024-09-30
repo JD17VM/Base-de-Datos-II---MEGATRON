@@ -4,12 +4,21 @@
 #include <vector>
 #include <string>
 
-
 using namespace std;
 
 class Columna
 {
-public:
+public: 
+    void guardarEnArchivo(const string &texto) const {
+        ofstream archivo("resultado.txt", ios::app);
+        if (archivo.is_open()) {
+            archivo << texto << endl;
+            archivo.close();
+        } else {
+            cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
+        }
+    }
+
     string nombre;
     string tipo_dato;
 
@@ -19,7 +28,17 @@ public:
 
 class Tabla
 {
-public:
+public: 
+    void guardarEnArchivo(const string &texto) const {
+        ofstream archivo("resultado.txt", ios::app);
+        if (archivo.is_open()) {
+            archivo << texto << endl;
+            archivo.close();
+        } else {
+            cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
+        }
+    }
+
     string nombre_tabla;
     vector<Columna> columnas;
 
@@ -32,10 +51,10 @@ public:
 
     void mostrarEstructura() const
     {
-        cout << "Tabla: " << nombre_tabla << endl;
+        guardarEnArchivo("Tabla: " + nombre_tabla);
         for (const auto &columna : columnas)
         {
-            cout << "  Columna: " << columna.nombre << ", Tipo de dato: " << columna.tipo_dato << endl;
+            guardarEnArchivo("  Columna: " + columna.nombre + ", Tipo de dato: " + columna.tipo_dato);
         }
     }
 
@@ -49,11 +68,11 @@ public:
         {
             if (i < columnas.size())
             {
-                cout << valor << " "; 
+                guardarEnArchivo(valor + " ");
             }
             i++;
         }
-        cout << endl; 
+        guardarEnArchivo("");
     }
 
     void mostrarRegistroSeleccionado(const string &registro, const vector<int> &indices_columnas) const
@@ -71,10 +90,10 @@ public:
         {
             if (indice < valores_registro.size())
             {
-                cout << valores_registro[indice] << " ";
+                guardarEnArchivo(valores_registro[indice] + " ");
             }
         }
-        cout << endl;
+        guardarEnArchivo("");
     }
 
     bool mostrarRegistroSiCoincide(const string &registro, int indice_columna, const string &valor_busqueda) const
