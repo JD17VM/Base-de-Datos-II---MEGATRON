@@ -1,0 +1,280 @@
+1 
+Juan Carlos 
+Perez Gomez 
+13 
+1.55 
+
+2 
+Daniela Sandra 
+Ramirez Lopez 
+15 
+1.50 
+
+3 
+Miguel 
+Gomez Lobaton 
+11 
+1.40 
+
+4 
+Lucia 
+Prueba 
+12 
+1.45 
+
+5 
+Roberto 
+Martinez Torres 
+14 
+1.60 
+
+6 
+Maria 
+Lopez Fernandez 
+13 
+1.52 
+
+7 
+Pedro 
+Alvarez Torres 
+11 
+1.43 
+
+8 
+Sofia 
+Garcia Diaz 
+12 
+1.47 
+
+9 
+Andres 
+Mendoza Ruiz 
+15 
+1.63 
+
+10 
+Carla 
+Hernandez Morales 
+14 
+1.50 
+
+11 
+Alejandro 
+Ortega Villalobos 
+16 
+1.70 
+
+12 
+Valeria 
+Vargas Cuevas 
+11 
+1.40 
+
+13 
+Pablo 
+Sanchez Acosta 
+13 
+1.55 
+
+14 
+Laura 
+Velasquez Sanchez 
+15 
+1.53 
+
+15 
+Javier 
+Gutierrez Muñoz 
+12 
+1.50 
+
+16 
+Adriana 
+Cortez Herrera 
+14 
+1.58 
+
+17 
+Lucia 
+Jimenez Nunez 
+11 
+1.42 
+
+18 
+Isabella 
+Garcia Castillo 
+12 
+1.46 
+
+19 
+Fernando 
+Salazar Mendez 
+13 
+1.61 
+
+20 
+Camila 
+Castro Ortega 
+14 
+1.49 
+
+Juan Carlos 
+
+Daniela Sandra 
+
+Miguel 
+
+Lucia 
+
+Roberto 
+
+Maria 
+
+Pedro 
+
+Sofia 
+
+Andres 
+
+Carla 
+
+Alejandro 
+
+Valeria 
+
+Pablo 
+
+Laura 
+
+Javier 
+
+Adriana 
+
+Lucia 
+
+Isabella 
+
+Fernando 
+
+Camila 
+
+1 
+Juan Carlos 
+Perez Gomez 
+13 
+1.55 
+
+2 
+Daniela Sandra 
+Ramirez Lopez 
+15 
+1.50 
+
+3 
+Miguel 
+Gomez Lobaton 
+11 
+1.40 
+
+4 
+Lucia 
+Prueba 
+12 
+1.45 
+
+5 
+Roberto 
+Martinez Torres 
+14 
+1.60 
+
+6 
+Maria 
+Lopez Fernandez 
+13 
+1.52 
+
+7 
+Pedro 
+Alvarez Torres 
+11 
+1.43 
+
+8 
+Sofia 
+Garcia Diaz 
+12 
+1.47 
+
+9 
+Andres 
+Mendoza Ruiz 
+15 
+1.63 
+
+10 
+Carla 
+Hernandez Morales 
+14 
+1.50 
+
+11 
+Alejandro 
+Ortega Villalobos 
+16 
+1.70 
+
+12 
+Valeria 
+Vargas Cuevas 
+11 
+1.40 
+
+13 
+Pablo 
+Sanchez Acosta 
+13 
+1.55 
+
+14 
+Laura 
+Velasquez Sanchez 
+15 
+1.53 
+
+15 
+Javier 
+Gutierrez Muñoz 
+12 
+1.50 
+
+16 
+Adriana 
+Cortez Herrera 
+14 
+1.58 
+
+17 
+Lucia 
+Jimenez Nunez 
+11 
+1.42 
+
+18 
+Isabella 
+Garcia Castillo 
+12 
+1.46 
+
+19 
+Fernando 
+Salazar Mendez 
+13 
+1.61 
+
+20 
+Camila 
+Castro Ortega 
+14 
+1.49 
+

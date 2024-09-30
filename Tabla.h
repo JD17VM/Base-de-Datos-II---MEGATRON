@@ -13,10 +13,11 @@ public:
         ofstream archivo("resultado.txt", ios::app);
         if (archivo.is_open()) {
             archivo << texto << endl;
-            archivo.close();
         } else {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
+        // También mostrar en consola
+        cout << texto << endl;
     }
 
     string nombre;
@@ -33,10 +34,11 @@ public:
         ofstream archivo("resultado.txt", ios::app);
         if (archivo.is_open()) {
             archivo << texto << endl;
-            archivo.close();
         } else {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
+        // También mostrar en consola
+        cout << texto << endl;
     }
 
     string nombre_tabla;
