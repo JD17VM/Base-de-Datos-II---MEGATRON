@@ -43,7 +43,7 @@
 
 - Seleccionamos la tabla film_actor y mostramos todos los valores de esta tabla.
 <p align="center">
-    <img src="/Evidencias/join_tables.png">
+    <img src="/Evidencias/joins_tables.png">
 </p>
 
 6. Actualización de valores
