@@ -6,20 +6,36 @@
 
 using namespace std;
 
+void limpiarArchivo()
+{
+    ofstream archivo("resultado.txt", ios::trunc);
+    if (!archivo.is_open())
+    {
+        cerr << "Error: No se pudo abrir el archivo resultado.txt para limpiar." << endl;
+    }
+    archivo.close();
+}
+
 class Columna
 {
-public: 
-    void guardarEnArchivo(const string &texto, bool newline = true) const {
+public:
+    void guardarEnArchivo(const string &texto, bool newline = true) const
+    {
         ofstream archivo("resultado.txt", ios::app);
-        if (archivo.is_open()) {
+        if (archivo.is_open())
+        {
             archivo << texto;
-            if (newline) archivo << endl;
-        } else {
+            if (newline)
+                archivo << endl;
+        }
+        else
+        {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
-        
+
         cout << texto;
-        if (newline) cout << endl;
+        if (newline)
+            cout << endl;
     }
 
     string nombre;
@@ -31,18 +47,24 @@ public:
 
 class Tabla
 {
-public: 
-    void guardarEnArchivo(const string &texto, bool newline = true) const {
+public:
+    void guardarEnArchivo(const string &texto, bool newline = true) const
+    {
         ofstream archivo("resultado.txt", ios::app);
-        if (archivo.is_open()) {
+        if (archivo.is_open())
+        {
             archivo << texto;
-            if (newline) archivo << endl;
-        } else {
+            if (newline)
+                archivo << endl;
+        }
+        else
+        {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
-        
+
         cout << texto;
-        if (newline) cout << endl;
+        if (newline)
+            cout << endl;
     }
 
     string nombre_tabla;

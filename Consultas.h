@@ -13,6 +13,7 @@ public:
 
     void INNER_JOIN(const string &columna_1, const string &tabla_1, const string &columna_2, const string &tabla_2)
     {
+        limpiarArchivo();
         Tabla *t1 = schema.buscarTabla(tabla_1);
         Tabla *t2 = schema.buscarTabla(tabla_2);
 
@@ -105,6 +106,7 @@ public:
 
     void LEFT_JOIN(const string &columna_1, const string &tabla_1, const string &columna_2, const string &tabla_2)
     {
+        limpiarArchivo();
         Tabla *t1 = schema.buscarTabla(tabla_1);
         Tabla *t2 = schema.buscarTabla(tabla_2);
 
@@ -210,6 +212,7 @@ public:
 
     void RIGHT_JOIN(const string &columna_1, const string &tabla_1, const string &columna_2, const string &tabla_2)
     {
+        limpiarArchivo();
         Tabla *t1 = schema.buscarTabla(tabla_1);
         Tabla *t2 = schema.buscarTabla(tabla_2);
 
@@ -315,6 +318,7 @@ public:
 
     void SELECT_ALL_FROM(const string &nombre_tabla, const string &nombre_columna = "", const string &valor_where_equal = "", const string &join_type = "", const string &columna_1 = "", const string &tabla_2 = "", const string &columna_2 = "")
     {
+        limpiarArchivo();
         Tabla *tabla = schema.buscarTabla(nombre_tabla);
         if (!tabla)
         {
@@ -386,6 +390,7 @@ public:
 
     void SELECT_FROM(const vector<string> &columnas, const string &nombre_tabla, const string &nombre_columna = "", const string &valor_where_equal = "", const string &join_type = "", const string &columna_1 = "", const string &tabla_2 = "", const string &columna_2 = "")
     {
+        limpiarArchivo();
         Tabla *tabla = schema.buscarTabla(nombre_tabla);
         if (!tabla)
         {

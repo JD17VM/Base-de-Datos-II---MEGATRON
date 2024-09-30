@@ -28,7 +28,7 @@ int main() {
     
     do {
         mostrarMenu();
-        cout << "Selecciona una opción: ";
+        cout << "Selecciona una opcion: ";
         cin >> opcion;
         cin.ignore(); 
         
