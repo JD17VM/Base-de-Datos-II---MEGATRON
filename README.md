@@ -1,4 +1,4 @@
-#Implementación de MEGATRON
+# Implementación de MEGATRON
 
 1. Seleccionar tablas por *
 - Seleccionamos la tabla actor y mostramos todas las registros con *
