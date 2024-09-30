@@ -32,3 +32,23 @@
 <p align="center">
     <img src="/Evidencias/select_valor_film_actor.jpg">
 </p>
+
+4. JOIN de las tablas 
+- Hacemos uso de la funcion **inner join** para unir 2 tablas **actor** y **customer**
+<p align="center">
+    <img src="/Evidencias/join.png">
+</p>
+
+5. Selección de Unión de tablas
+
+- Seleccionamos la tabla film_actor y mostramos todos los valores de esta tabla.
+<p align="center">
+    <img src="/Evidencias/join_tables.png">
+</p>
+
+6. Actualización de valores
+
+- Seleccionamos la opcion de **UPDATE** en la tabla **actor** y actualizamos la columna **first_name** el nombre de referencia es **Penelope** y actualizamos con el valor de **Luis**
+<p align="center">
+    <img src="/Evidencias/update_values.png">
+</p>
