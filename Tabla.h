@@ -9,15 +9,17 @@ using namespace std;
 class Columna
 {
 public: 
-    void guardarEnArchivo(const string &texto) const {
+    void guardarEnArchivo(const string &texto, bool newline = true) const {
         ofstream archivo("resultado.txt", ios::app);
         if (archivo.is_open()) {
-            archivo << texto << endl;
+            archivo << texto;
+            if (newline) archivo << endl;
         } else {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
-        // También mostrar en consola
-        cout << texto << endl;
+        
+        cout << texto;
+        if (newline) cout << endl;
     }
 
     string nombre;
@@ -30,15 +32,17 @@ public:
 class Tabla
 {
 public: 
-    void guardarEnArchivo(const string &texto) const {
+    void guardarEnArchivo(const string &texto, bool newline = true) const {
         ofstream archivo("resultado.txt", ios::app);
         if (archivo.is_open()) {
-            archivo << texto << endl;
+            archivo << texto;
+            if (newline) archivo << endl;
         } else {
             cerr << "Error: No se pudo abrir el archivo resultado.txt." << endl;
         }
-        // También mostrar en consola
-        cout << texto << endl;
+        
+        cout << texto;
+        if (newline) cout << endl;
     }
 
     string nombre_tabla;
@@ -70,7 +74,7 @@ public:
         {
             if (i < columnas.size())
             {
-                guardarEnArchivo(valor + " ");
+                guardarEnArchivo(valor + "\t", false);
             }
             i++;
         }
@@ -92,7 +96,7 @@ public:
         {
             if (indice < valores_registro.size())
             {
-                guardarEnArchivo(valores_registro[indice] + " ");
+                guardarEnArchivo(valores_registro[indice] + "\t", false);
             }
         }
         guardarEnArchivo("");
