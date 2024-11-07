@@ -26,10 +26,10 @@ std::vector<std::string> Parser::tokenize(const std::string &query_string)
   return tokens;
 }
 
-// Check if the command is valid (only supports SELECT for now)
+// Check if the command is valid (supports SELECT and UPDATE)
 bool Parser::isValidCommand(const std::string &command)
 {
-  return command == "SELECT";
+  return command == "SELECT" || command == "UPDATE";
 }
 
 // Parse the query string and return a Query struct
@@ -52,41 +52,91 @@ Parser::Query Parser::parse(const std::string &query_string)
     return query;
   }
 
-  // Parse columns
-  size_t from_index = 1;
-  while (from_index < tokens.size() && tokens[from_index] != "FROM")
+  // Parse SELECT command
+  if (query.command == "SELECT")
   {
-    query.columns.push_back(tokens[from_index]);
-    from_index++;
-  }
-
-  if (from_index >= tokens.size() || tokens[from_index] != "FROM")
-  {
-    std::cerr << "Error: Missing FROM clause!" << std::endl;
-    return query;
-  }
-
-  // Parse table name
-  from_index++;
-  if (from_index >= tokens.size())
-  {
-    std::cerr << "Error: Missing table name!" << std::endl;
-    return query;
-  }
-  query.table = tokens[from_index];
-
-  // Parse WHERE clause (optional)
-  size_t where_index = from_index + 1;
-  if (where_index < tokens.size() && tokens[where_index] == "WHERE")
-  {
-    where_index++;
-    if (where_index + 2 >= tokens.size())
+    size_t from_index = 1;
+    while (from_index < tokens.size() && tokens[from_index] != "FROM")
     {
-      std::cerr << "Error: Invalid WHERE clause!" << std::endl;
+      query.columns.push_back(tokens[from_index]);
+      from_index++;
+    }
+
+    if (from_index >= tokens.size() || tokens[from_index] != "FROM")
+    {
+      std::cerr << "Error: Missing FROM clause!" << std::endl;
       return query;
     }
-    query.condition_column = tokens[where_index];
-    query.condition_value = tokens[where_index + 2];
+
+    // Parse table name
+    from_index++;
+    if (from_index >= tokens.size())
+    {
+      std::cerr << "Error: Missing table name!" << std::endl;
+      return query;
+    }
+    query.table = tokens[from_index];
+
+    // Parse WHERE clause (optional)
+    size_t where_index = from_index + 1;
+    if (where_index < tokens.size() && tokens[where_index] == "WHERE")
+    {
+      where_index++;
+      if (where_index + 2 >= tokens.size())
+      {
+        std::cerr << "Error: Invalid WHERE clause!" << std::endl;
+        return query;
+      }
+      query.condition_column = tokens[where_index];
+      query.condition_value = tokens[where_index + 2];
+    }
+  }
+
+  // Parse UPDATE command
+  else if (query.command == "UPDATE")
+  {
+    // Parse table name
+    if (tokens.size() < 4)
+    {
+      std::cerr << "Error: Invalid UPDATE syntax!" << std::endl;
+      return query;
+    }
+    query.table = tokens[1];
+
+    // Ensure that "SET" is in the correct position
+    size_t set_index = 2;
+    if (tokens[set_index] != "SET")
+    {
+      std::cerr << "Error: Missing SET clause in UPDATE!" << std::endl;
+      return query;
+    }
+
+    // Parse column to update and new value
+    if (set_index + 3 >= tokens.size() || tokens[set_index + 2] != "=")
+    {
+      std::cerr << "Error: Invalid syntax in SET clause!" << std::endl;
+      return query;
+    }
+    query.update_column = tokens[set_index + 1];
+    query.new_value = tokens[set_index + 3];
+
+    // Parse WHERE clause (required for UPDATE)
+    size_t where_index = set_index + 4;
+    if (where_index < tokens.size() && tokens[where_index] == "WHERE")
+    {
+      if (where_index + 3 >= tokens.size())
+      {
+        std::cerr << "Error: Invalid WHERE clause in UPDATE!" << std::endl;
+        return query;
+      }
+      query.condition_column = tokens[where_index + 1];
+      query.condition_value = tokens[where_index + 3];
+    }
+    else
+    {
+      std::cerr << "Error: UPDATE requires a WHERE clause!" << std::endl;
+      return query;
+    }
   }
 
   return query;
