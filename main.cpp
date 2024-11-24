@@ -61,6 +61,7 @@ int main()
         // Imprimir el contenido del query para depuración
         imprimirQuery(query);
 
+        /* SELECT * FROM estudiantes;  SELECT id_estudiante, nombre FROM estudiantes;*/
         // Mapear el comando a la función correcta en Consultas
         if (query.command == "SELECT")
         {
@@ -100,6 +101,7 @@ int main()
                 consultas.SELECT_FROM(query.columns, query.table);
             }
         }
+        /* UPDATE estudiantes nombre = 'Carlos' WHERE id_estudiante = 1; */
         else if (query.command == "UPDATE")
         {
             // Actualizar un registro específico
@@ -112,6 +114,7 @@ int main()
             consultas.UPDATE(query.update_column, query.table, query.condition_column, query.condition_value, query.new_value);
             cout << "\nRegistro actualizado correctamente.\n";
         }
+        /* JOIN inner customer.address_id address.address_id SELECT customer.first_name, customer.last_name, address.address, address.phone; */
         else if (query.command == "JOIN")
         {
             // Ejecutar un JOIN especificado
