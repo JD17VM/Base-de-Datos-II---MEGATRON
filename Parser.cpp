@@ -12,6 +12,23 @@ std::string removeTrailingSemicolon(const std::string &query_string)
   return query_string;
 }
 
+std::vector<std::string> split(const std::string &str, char delimiter)
+{
+  std::vector<std::string> tokens;
+  std::string token;
+  std::istringstream tokenStream(str);
+  while (std::getline(tokenStream, token, delimiter))
+  {
+    tokens.push_back(token);
+  }
+  return tokens;
+}
+
+bool Parser::isValidCommand(const std::string &command)
+{
+  return command == "SELECT" || command == "UPDATE" || command == "JOIN";
+}
+
 // Tokenize the query string by spaces
 std::vector<std::string> Parser::tokenize(const std::string &query_string)
 {
@@ -24,12 +41,6 @@ std::vector<std::string> Parser::tokenize(const std::string &query_string)
     tokens.push_back(token);
   }
   return tokens;
-}
-
-// Check if the command is valid (supports SELECT and UPDATE)
-bool Parser::isValidCommand(const std::string &command)
-{
-  return command == "SELECT" || command == "UPDATE";
 }
 
 // Parse the query string and return a Query struct
@@ -136,6 +147,52 @@ Parser::Query Parser::parse(const std::string &query_string)
     {
       std::cerr << "Error: UPDATE requires a WHERE clause!" << std::endl;
       return query;
+    }
+  }
+
+  else if (query.command == "JOIN")
+  {
+    // Parse JOIN type
+    if (tokens.size() < 5)
+    {
+      std::cerr << "Error: Invalid JOIN syntax!" << std::endl;
+      return query;
+    }
+
+    query.join_type = tokens[1];
+
+    // Parse table1 and column1
+    std::string table1_column1 = tokens[2];
+    size_t dot_pos = table1_column1.find('.');
+    if (dot_pos == std::string::npos)
+    {
+      std::cerr << "Error: Invalid table.column syntax for table1!" << std::endl;
+      return query;
+    }
+    query.table1 = table1_column1.substr(0, dot_pos);
+    query.column1 = table1_column1.substr(dot_pos + 1);
+
+    // Parse table2 and column2
+    std::string table2_column2 = tokens[3];
+    dot_pos = table2_column2.find('.');
+    if (dot_pos == std::string::npos)
+    {
+      std::cerr << "Error: Invalid table.column syntax for table2!" << std::endl;
+      return query;
+    }
+    query.table2 = table2_column2.substr(0, dot_pos);
+    query.column2 = table2_column2.substr(dot_pos + 1);
+
+    // Parse SELECT clause
+    if (tokens[4] != "SELECT")
+    {
+      std::cerr << "Error: Missing SELECT clause in JOIN!" << std::endl;
+      return query;
+    }
+
+    for (size_t i = 5; i < tokens.size(); ++i)
+    {
+      query.columns.push_back(tokens[i]);
     }
   }
 

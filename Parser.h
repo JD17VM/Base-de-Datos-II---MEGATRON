@@ -38,6 +38,7 @@ public:
 private:
   std::vector<std::string> tokenize(const std::string &query_string);
   bool isValidCommand(const std::string &command);
+  std::vector<std::string> split(const std::string &str, char delimiter); // Declaración de split
 };
 
 #endif // PARSER_H

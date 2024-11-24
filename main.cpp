@@ -1,3 +1,4 @@
+/* g++ main.cpp Consultas.h Parser.cpp  -o programa */
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -119,6 +120,13 @@ int main()
                  << ", columna1: " << query.column1
                  << ", tabla2: " << query.table2
                  << ", columna2: " << query.column2 << endl;
+
+            cout << "[DEBUG] Columnas seleccionadas: ";
+            for (const auto &col : query.columns)
+            {
+                cout << col << " ";
+            }
+            cout << endl;
 
             if (query.join_type == "inner")
             {
